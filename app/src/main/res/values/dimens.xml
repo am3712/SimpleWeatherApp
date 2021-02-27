@@ -1,0 +1,16 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Icon Sizes -->
+    <dimen name="today_icon">96dp</dimen>
+    <dimen name="list_icon">40dp</dimen>
+
+    <dimen name="list_item_date_margin">16dp</dimen>
+
+    <dimen name="forecast_temperature_space">4dp</dimen>
+
+    <dimen name="forecast_text_size">22sp</dimen>
+    <dimen name="city_text_size">14sp</dimen>
+</resources>

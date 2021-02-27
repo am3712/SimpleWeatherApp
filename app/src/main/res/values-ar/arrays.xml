@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- location Preference -->
+    <string-array name="location_entries">
+        <item>الموقع الحالي</item>
+        <item>حدد الموقع من الخريطة</item>
+    </string-array>
+
+    <string-array name="temperature_entries">
+        <item>كلفن</item>
+        <item>درجة مئوية</item>
+        <item>فهرنهايت</item>
+    </string-array>
+
+    <string-array name="wind_speed_entries">
+        <item>متر / ثانية</item>
+        <item>ميل / ساعة</item>
+    </string-array>
+
+    <string-array name="lang_entries">
+        <item>الإنجليزية</item>
+        <item>العربية</item>
+    </string-array>
+
+
+    <string-array name="for_options">
+        <item>Next day</item>
+        <item>Next week</item>
+    </string-array>
+</resources>

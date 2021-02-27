@@ -1,0 +1,102 @@
+<resources>
+    <string name="app_name" translatable="false">Simple Weather App</string>
+    <string name="title_home">Home</string>
+    <string name="title_favourite">Favourite</string>
+    <string name="title_alarms">Alarms</string>
+    <string name="title_settings">Settings</string>
+    <string name="weather_icon_description" translatable="false">Weather icon</string>
+    <string name="dash" translatable="false">-</string>
+    <string name="dash2" translatable="false">/</string>
+    <string name="update_button_description" translatable="false">update button</string>
+    <string name="fab_content_desc">add location</string>
+    <string name="dropped_pin">Dropped Pin</string>
+    <string name="zoom" translatable="false">15f</string>
+
+
+    <!--    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyC5btHxdRDldq6Qm43EUlYM_QEwHlNn_Eg</string>-->
+    <string name="add">add</string>
+    <string name="add_location_to_list">add location to list</string>
+    <string name="detect_location">Detect Location</string>
+    <string name="this_is_update_icon_description" translatable="false">this is update Icon</string>
+    <string name="this_is_location_icon_description" translatable="false">this is location icon</string>
+    <string name="details">Details</string>
+    <string name="no_network_image_description" translatable="false">No Network Image</string>
+
+    <!-- Preference Titles -->
+    <string name="location_header">Default location</string>
+    <string name="units_header">Units</string>
+
+    <!-- location Preferences -->
+    <string name="location_options_title">Change location</string>
+    <string name="temperature_title">Temperature units</string>
+    <string name="alarms_title">Weather Alarms</string>
+    <string name="settings_alerts_title">Weather Alerts</string>
+    <string name="alerts_summery">choose alerts status</string>
+    <string name="wind_speed_title">wind speed unit</string>
+    <string name="lang_title">change language</string>
+
+    <!-- first time fragment -->
+    <string name="permission_rationale">Location permission needed for core functionality</string>
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core functionality.</string>
+    <string name="ok">OK</string>
+    <string name="start_up_text">Hello,\nfirst time you must detect home location and you can choose auto detect which detect current location or pick location from map\n</string>
+    <string name="auto_detect">Auto detect</string>
+    <string name="pick_from_map">pick from map</string>
+    <string name="detecting">detecting…</string>
+    <string name="retry">Retry</string>
+    <string name="alerts_alarms">Alerts &amp; Alarms</string>
+    <string name="language_title">Language</string>
+    <string name="alarm_summery_on">alarms enabled</string>
+    <string name="alarm_summery_off">alarms disabled</string>
+    <string name="alerts_summery_on">alerts enabled</string>
+    <string name="alerts_summery_off">alerts disabled</string>
+    <string name="units_summary">change weather units</string>
+    <string name="add_alert_floating_button" translatable="false">Add alarm floating button</string>
+    <string name="alarm_details">Alarm Details</string>
+    <string name="alert_date">Alert Date</string>
+    <string name="alarm_type">Alarm Type :</string>
+    <string name="default_alarm_sound">default alarm sound</string>
+    <string name="notification">notification</string>
+    <string name="add_alarm">Add alarm</string>
+    <string name="time_from">Time from :</string>
+    <string name="time_to">Time to :</string>
+    <string name="save">save</string>
+    <string name="for_time">For :</string>
+    <string name="from">from</string>
+    <string name="to">to</string>
+    <string name="alarm_type_image_description" translatable="false">alarm type Image</string>
+    <string name="stop_alarm_image_button_description" translatable="false">Stop alarm image button</string>
+    <string name="alarm_name">Alarm Name</string>
+
+
+    <string name="weather_alerts_channel_id" translatable="false">alerts_channel</string>
+    <string name="weather_alerts_channel_name">Weather alerts</string>
+    <string name="weather_alerts_channel_description">weather alerts notifications</string>
+
+
+    <string name="weather_alarms_channel_id" translatable="false">alarms_channel</string>
+    <string name="weather_alarms_channel_name">Weather alarms</string>
+    <string name="weather_alarms_channel_description">weather alarms notifications</string>
+<!--    <string name="alerts_notification_text">Alert:</string>-->
+<!--    <string name="alarms_notification_text">Alarm:</string>-->
+    <string name="repeat">Repeat: </string>
+    <string name="active">active</string>
+    <string name="disabled">disabled</string>
+    <string name="notification_type" translatable="false">notification</string>
+    <string name="sound_alarm_type" translatable="false">default alarm sound</string>
+    <string name="please_select_start">please select start time of alarm!!!</string>
+    <string name="please_select_end">please select end time of alarm!!!</string>
+    <string name="please_select_type">please select type of alarm!!!</string>
+    <string name="please_select_one">please select at least one day to schedule alarm!!!</string>
+    <string name="please_select_name">please fill alarm name!!</string>
+    <string name="humidity">Humidity: %d\%%</string>
+    <string name="wind_speed">Wind speed: %.2f</string>
+    <string name="pressure">Pressure: %dmbar</string>
+    <string name="meter_sec">meter/sec</string>
+    <string name="miles_hour">mph</string>
+    <string name="remove_city">remove city</string>
+    <string name="city_removed_message">City deleted successfully</string>
+    <string name="days">select day(s) :</string>
+    <string name="start_time_must_be_grater">start time must be greater than current time !!!</string>
+
+</resources>

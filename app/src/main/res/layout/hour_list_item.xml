@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="hour"
+            type="com.example.simpleweatherapp.data.local.Hour" />
+
+        <variable
+            name="tempUnit"
+            type="com.example.simpleweatherapp.data.repository.TemperatureUnit" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/touch_selector"
+        android:minHeight="?android:attr/listPreferredItemHeight"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp">
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textSize="14sp"
+            bind:hourTime="@{hour.date}"
+            app:layout_constraintBottom_toTopOf="@+id/weather_icon"
+            app:layout_constraintEnd_toEndOf="@+id/weather_icon"
+            app:layout_constraintStart_toStartOf="@+id/weather_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Today, April 03" />
+
+        <ImageView
+            android:id="@+id/weather_icon"
+            android:layout_width="@dimen/list_icon"
+            android:layout_height="@dimen/list_icon"
+            android:contentDescription="@string/weather_icon_description"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/temperature"
+            app:layout_constraintEnd_toStartOf="@+id/horizontal_line"
+            app:layout_constraintStart_toStartOf="@+id/horizontal_line"
+            app:layout_constraintTop_toBottomOf="@+id/date"
+            bind:weatherIcon="@{hour.icon}" />
+        <!--        app:weatherIcon="@{hour.icon}"-->
+
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/primary_text"
+            android:textSize="@dimen/forecast_text_size"
+            app:layout_constraintBottom_toTopOf="@+id/weather_description"
+            app:layout_constraintEnd_toEndOf="@+id/weather_icon"
+            app:layout_constraintStart_toStartOf="@+id/weather_icon"
+            app:layout_constraintTop_toBottomOf="@+id/weather_icon"
+            bind:temp="@{hour.temp}"
+            bind:temperatureUnit="@{tempUnit}"
+            tools:text="19\u00b0" />
+
+        <TextView
+            android:id="@+id/weather_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{hour.desc}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
+            android:textColor="@color/secondary_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/temperature"
+            app:layout_constraintStart_toStartOf="@+id/temperature"
+            app:layout_constraintTop_toBottomOf="@+id/temperature"
+            tools:text="Rainy" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

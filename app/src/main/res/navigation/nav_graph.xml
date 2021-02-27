@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_weather">
+
+    <fragment
+        android:id="@+id/navigation_weather"
+        android:name="com.example.simpleweatherapp.ui.weather.WeatherFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_weather" >
+        <action
+            android:id="@+id/action_navigation_weather_to_startUpFragment"
+            app:destination="@id/startUpFragment"
+            app:popUpTo="@id/navigation_weather"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favourite"
+        android:name="com.example.simpleweatherapp.ui.favourite.FavouriteFragment"
+        android:label="@string/title_favourite"
+        tools:layout="@layout/fragment_favourite">
+        <action
+            android:id="@+id/action_navigation_favourite_to_mapsFragment"
+            app:destination="@id/navigation_maps"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_favourite" />
+        <argument
+            android:name="latLng"
+            android:defaultValue="@null"
+            app:argType="com.google.android.gms.maps.model.LatLng"
+            app:nullable="true" />
+        <argument
+            android:name="location_name"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_favourite_to_detailsFragment"
+            app:destination="@id/navigation_details" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_maps"
+        android:name="com.example.simpleweatherapp.ui.location.DetectLocationFragment"
+        android:label="@string/detect_location"
+        tools:layout="@layout/fragment_detect_location">
+        <action
+            android:id="@+id/action_mapsFragment_to_navigation_favourite"
+            app:destination="@id/navigation_favourite"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_maps" />
+        <argument
+            android:name="navigate_to"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="latLng"
+            android:defaultValue="@null"
+            app:argType="com.google.android.gms.maps.model.LatLng"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_maps_to_navigation_weather"
+            app:destination="@id/navigation_weather"
+            app:popUpTo="@id/mobile_navigation" />
+        <action
+            android:id="@+id/action_navigation_maps_to_navigation_settings"
+            app:destination="@id/navigation_settings"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_maps" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_details"
+        android:name="com.example.simpleweatherapp.ui.details.DetailsFragment"
+        android:label="@string/details"
+        tools:layout="@layout/details_fragment">
+        <argument
+            android:name="city_lat"
+            android:defaultValue="91.0"
+            app:argType="float" />
+        <argument
+            android:name="city_lng"
+            android:defaultValue="181.0"
+            app:argType="float" />
+        <argument
+            android:name="loc"
+            android:defaultValue="Not Set"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.simpleweatherapp.ui.settings.SettingsFragment"
+        android:label="@string/title_settings">
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_maps"
+            app:destination="@id/navigation_maps" />
+    </fragment>
+    <fragment
+        android:id="@+id/startUpFragment"
+        android:name="com.example.simpleweatherapp.ui.firstopen.StartUpFragment"
+        android:label="First time launch"
+        tools:layout="@layout/fragment_start_up">
+        <action
+            android:id="@+id/action_startUpFragment_to_navigation_weather"
+            app:destination="@id/navigation_weather"
+            app:popUpTo="@id/startUpFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_startUpFragment_to_navigation_maps"
+            app:destination="@id/navigation_maps" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_alarms"
+        android:name="com.example.simpleweatherapp.ui.alarms.AlarmsFragment"
+        android:label="@string/title_alarms"
+        tools:layout="@layout/alarms_fragment">
+        <action
+            android:id="@+id/action_alertsFragment_to_addAlertFragment"
+            app:destination="@id/navigation_addAlarm" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_addAlarm"
+        android:name="com.example.simpleweatherapp.ui.addalarm.AddAlarmFragment"
+        android:label="@string/add_alarm"
+        tools:layout="@layout/add_alarm_fragment">
+        <action
+            android:id="@+id/action_addAlertFragment_to_alertsFragment"
+            app:destination="@id/navigation_alarms"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_addAlarm" />
+    </fragment>
+</navigation>

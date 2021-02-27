@@ -1,0 +1,69 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_baseline_location_on_24"
+        app:title="@string/location_header">
+        <Preference
+            app:key="location_name"
+            app:title="@string/location_header" />
+
+        <ListPreference
+            app:entries="@array/location_entries"
+            app:entryValues="@array/location_values"
+            app:key="current_location_option"
+            app:title="@string/location_options_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_baseline_insert_chart_24"
+        app:summary="@string/units_summary"
+        app:title="@string/units_header">
+
+        <ListPreference
+            app:defaultValue="CELSIUS"
+            app:entries="@array/temperature_entries"
+            app:entryValues="@array/temperature_values"
+            app:key="temperature_unit"
+            app:title="@string/temperature_title"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="MILES_HOUR"
+            app:entries="@array/wind_speed_entries"
+            app:entryValues="@array/wind_speed_values"
+            app:key="wind_speed_unit"
+            app:title="@string/wind_speed_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_baseline_notifications_active_24"
+        app:title="@string/alerts_alarms">
+        <SwitchPreferenceCompat
+            app:key="alerts_key"
+            app:summaryOff="@string/alerts_summery_off"
+            app:summaryOn="@string/alerts_summery_on"
+            app:title="@string/settings_alerts_title" />
+
+        <SwitchPreferenceCompat
+            app:key="alarms_key"
+            app:summaryOff="@string/alarm_summery_off"
+            app:summaryOn="@string/alarm_summery_on"
+            app:title="@string/alarms_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_baseline_language_24"
+        app:title="@string/language_title">
+        <ListPreference
+            app:entries="@array/lang_entries"
+            app:entryValues="@array/lang_values"
+            app:key="user_lang_key"
+            app:title="@string/lang_title"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

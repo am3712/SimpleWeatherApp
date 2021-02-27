@@ -1,0 +1,51 @@
+<resources>
+    <!-- location Preference -->
+    <string-array name="location_entries">
+        <item>current location</item>
+        <item>select location from the map</item>
+    </string-array>
+
+    <string-array name="location_values">
+        <item>CURRENT_LOCATION</item>
+        <item>FROM_MAP</item>
+    </string-array>
+
+    <string-array name="temperature_entries">
+        <item>Kelvin</item>
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+    </string-array>
+
+    <string-array name="temperature_values" >
+        <item>KELVIN</item>
+        <item>CELSIUS</item>
+        <item>FAHRENHEIT</item>
+    </string-array>
+
+    <string-array name="wind_speed_entries">
+        <item>meter/sec</item>
+        <item>miles/hour</item>
+    </string-array>
+
+    <string-array name="wind_speed_values">
+        <item>METER_SEC</item>
+        <item>MILES_HOUR</item>
+    </string-array>
+
+    <string-array name="lang_entries">
+        <item>English</item>
+        <item>Arabic</item>
+    </string-array>
+
+    <string-array name="lang_values">
+        <item>en</item>
+        <item>ar</item>
+    </string-array>
+
+
+    <string-array name="for_options">
+        <item>Next day</item>
+        <item>Next week</item>
+    </string-array>
+
+</resources>

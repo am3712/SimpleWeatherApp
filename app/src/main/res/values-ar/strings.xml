@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home">الصفحة الرئيسية</string>
+    <string name="title_favourite">المفضل</string>
+    <string name="title_alarms">إنذارات</string>
+    <string name="title_settings">إعدادات</string>
+    <string name="fab_content_desc">أضف الموقع</string>
+    <string name="dropped_pin">الموقغ الملتقط</string>
+
+    <string name="add">اضف</string>
+    <string name="add_location_to_list">إضافة الموقع إلى القائمة</string>
+    <string name="detect_location">كشف الموقع</string>
+    <string name="details">تفاصيل</string>
+
+
+    <!-- Preference Titles -->
+    <string name="location_header">الموقع الافتراضي</string>
+    <string name="units_header">الوحدات</string>
+
+    <!-- location Preferences -->
+    <string name="location_options_title">تغيير الموقع</string>
+    <string name="temperature_title">وحدات درجة الحرارة</string>
+    <string name="alarms_title">إنذارات الطقس</string>
+    <string name="settings_alerts_title">تنبيهات الطقس</string>
+    <string name="alerts_summery">اختر حالة التنبيهات</string>
+    <string name="wind_speed_title">وحدة سرعة الرياح</string>
+    <string name="lang_title">تغيير اللغة</string>
+
+    <!-- first time fragment -->
+    <string name="permission_rationale">إذن الموقع مطلوب للوظائف الأساسية</string>
+    <string name="permission_denied_explanation">تم رفض الإذن ، ولكنه ضروري للوظيفة الأساسية.</string>
+    <string name="ok">موافق</string>
+    <string name="start_up_text">مرحبا\nيجب عليك اختيار الموقع الجغرافى الافتراضى و يمكنك الاختبار ما بين التحديد التلقائى او تحديد الموقع من الخريطه.\n</string>
+    <string name="auto_detect">تحديد تلقائى</string>
+    <string name="pick_from_map">اختر من الخريطة</string>
+    <string name="detecting">الكشف …</string>
+    <string name="retry">أعد المحاولة</string>
+    <string name="alerts_alarms">التنبيهات والإنذارات</string>
+    <string name="language_title">لغة</string>
+    <string name="alarm_summery_on">تم تمكين الإنذارات</string>
+    <string name="alarm_summery_off">تم تعطيل الإنذارات</string>
+    <string name="alerts_summery_on">تم تمكين التنبيهات</string>
+    <string name="alerts_summery_off">تم تعطيل التنبيهات</string>
+    <string name="units_summary">تغيير وحدات الطقس</string>
+    <string name="alarm_details">تفاصيل التنبيه</string>
+    <string name="alert_date">تاريخ التنبيه</string>
+    <string name="alarm_type">نوع التنبيه:</string>
+    <string name="default_alarm_sound">صوت التنبيه الافتراضي</string>
+    <string name="notification">تنبيه</string>
+    <string name="add_alarm">أضف المنبه</string>
+    <string name="time_from">الوقت من :</string>
+    <string name="time_to">الوقت ل :</string>
+    <string name="save">حفظ</string>
+    <string name="for_time">لمده :</string>
+    <string name="from">من</string>
+    <string name="to">إلى</string>
+    <string name="alarm_name">اسم التنبيه</string>
+
+
+    <string name="weather_alerts_channel_name">إنذارات الطقس</string>
+    <string name="weather_alerts_channel_description">إخطارات لانذارات الطقس</string>
+
+
+    <string name="weather_alarms_channel_name">تنبيهات الطقس</string>
+    <string name="weather_alarms_channel_description">إخطارات تنبيهات الطقس</string>
+
+<!--    <string name="alerts_notification_text">انذار:</string>-->
+<!--    <string name="alarms_notification_text">تنبيه:</string>-->
+
+    <string name="repeat">التكرار: </string>
+    <string name="active">نشط</string>
+    <string name="disabled">غير نشط</string>
+    <string name="please_select_start">الرجاء تحديد وقت بدء التنبيه!!!</string>
+    <string name="please_select_end">الرجاء تحديد وقت انتهاء التنبيه!!!</string>
+    <string name="please_select_type">الرجاء تحديد نوع التنبيه!!!</string>
+    <string name="please_select_one">يرجى تحديد يوم على الأقل لجدولة التنبيه!!!</string>
+    <string name="please_select_name">يرجى ملء اسم التنبيه!!!</string>
+    <string name="humidity">رطوبة: %d\%%</string>
+    <string name="wind_speed">سرعة الرياح: %.2f</string>
+    <string name="pressure">ضغط: %dميلي بار</string>
+    <string name="meter_sec">متر / ثانية</string>
+    <string name="miles_hour">ميل في الساعة</string>
+
+    <string name="remove_city">إزالة المدينة</string>
+    <string name="city_removed_message">تم حذف المدينة بنجاح</string>
+
+    <string name="days">حدد يوم (أيام):</string>
+    <string name="start_time_must_be_grater">يجب أن يكون وقت البدء أكبر من الوقت الحالي !!!</string>
+</resources>

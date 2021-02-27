@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="detailsViewModel"
+            type="com.example.simpleweatherapp.ui.details.DetailsViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            bind:onRefreshListener="@{() -> detailsViewModel.retryFetchData()}"
+            bind:refreshing="@{detailsViewModel.isLoading}">
+
+            <include
+                android:id="@+id/included_view"
+                layout="@layout/shared_layout"
+                bind:days="@{detailsViewModel.dayList}"
+                bind:homeName="@{detailsViewModel.homeName}"
+                bind:hours="@{detailsViewModel.hoursList}"
+                bind:preferences="@{detailsViewModel.userPreferences}"
+                bind:weather="@{detailsViewModel.weather}" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <ImageView
+            android:id="@+id/connection_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/no_network_image_description"
+            android:src="@drawable/ic_connection_error"
+            android:visibility="visible"
+            bind:goneStatus="@{detailsViewModel.isLoading}" />
+    </RelativeLayout>
+
+
+</layout>

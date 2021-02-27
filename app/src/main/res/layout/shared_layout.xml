@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="weather"
+            type="com.example.simpleweatherapp.data.local.Weather" />
+
+        <variable
+            name="days"
+            type="java.util.List&lt;com.example.simpleweatherapp.data.local.Day>" />
+
+        <variable
+            name="hours"
+            type="java.util.List&lt;com.example.simpleweatherapp.data.local.Hour>" />
+
+        <variable
+            name="preferences"
+            type="com.example.simpleweatherapp.data.repository.UserPreferences" />
+
+        <variable
+            name="homeName"
+            type="String" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/curWeather"
+                layout="@layout/current_forecast"
+                app:layout_constraintBottom_toTopOf="@+id/hoursList"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                bind:homeName="@{homeName}"
+                bind:preferences="@{preferences}"
+                bind:weather="@{weather}" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hoursList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintBottom_toTopOf="@+id/dayList"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/curWeather"
+                bind:hourTemperatureUnit="@{preferences.temperatureUnit}"
+                bind:listHourData="@{hours}" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dayList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hoursList"
+                bind:dayTemperatureUnit="@{preferences.temperatureUnit}"
+                bind:listDayData="@{days}" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

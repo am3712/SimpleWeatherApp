@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.simpleweatherapp.data.repository.WindSpeedUnit" />
+
+        <variable
+            name="weather"
+            type="com.example.simpleweatherapp.data.local.Weather" />
+
+        <variable
+            name="preferences"
+            type="com.example.simpleweatherapp.data.repository.UserPreferences" />
+
+        <variable
+            name="homeName"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/today_touch_selector"
+        android:paddingVertical="8dp">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{@string/humidity(weather.humidity)}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/horizontal_middle"
+            app:layout_constraintTop_toBottomOf="@+id/pressureText" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horizontal_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+        <!-- Icon indicating weather condition -->
+
+        <ImageView
+            android:id="@+id/weather_icon"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/weather_icon_description"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/weather_description"
+            app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homeLocName"
+            bind:weatherIcon="@{weather.icon}" />
+
+        <TextView
+            android:id="@+id/weather_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@{weather.desc}"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/weather_icon"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/weather_icon"
+            app:layout_constraintTop_toBottomOf="@+id/weather_icon"
+            tools:text="Rainy" />
+
+        <TextView
+            android:id="@+id/temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/white"
+            android:textSize="72sp"
+            app:layout_constraintBottom_toBottomOf="@+id/weather_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.45"
+            app:layout_constraintStart_toStartOf="@+id/horizontal_middle"
+            app:layout_constraintTop_toTopOf="@+id/weather_icon"
+            bind:temp="@{weather.temp}"
+            bind:temperatureUnit="@{preferences.temperatureUnit}"
+            tools:text="19\u00b0" />
+
+        <TextView
+            android:id="@+id/item_low_temperature"
+            style="@style/temp_style"
+            android:layout_marginStart="8dp"
+            android:textSize="20sp"
+            app:drawableStartCompat="@drawable/ic_wi_direction_down"
+            app:layout_constraintBottom_toBottomOf="@+id/max_temperature"
+            app:layout_constraintEnd_toEndOf="@+id/temperature"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/max_temperature"
+            app:layout_constraintTop_toBottomOf="@+id/temperature"
+            bind:temp="@{weather.min_temp}"
+            bind:temperatureUnit="@{preferences.temperatureUnit}"
+            tools:text="10\u00b0" />
+
+        <TextView
+            android:id="@+id/max_temperature"
+            style="@style/temp_style"
+            app:drawableStartCompat="@drawable/ic_wi_direction_up"
+            app:layout_constraintEnd_toStartOf="@+id/item_low_temperature"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/temperature"
+            app:layout_constraintTop_toBottomOf="@+id/temperature"
+            bind:temp="@{weather.max_temp}"
+            bind:temperatureUnit="@{preferences.temperatureUnit}"
+            tools:text="10\u00b0" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:drawableStartCompat="@drawable/ic_baseline_update_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            bind:lastUpdate="@{weather.lastUpdate}"
+            tools:text="Today, April 03" />
+
+        <TextView
+            android:id="@+id/windSpeedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginStart="8dp"
+            android:text="@{preferences.windSpeedUnit == WindSpeedUnit.METER_SEC ? @string/wind_speed(weather.wind_speed) + @string/meter_sec : @string/wind_speed(weather.wind_speed*2.24f)+@string/miles_hour}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@+id/textView6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/pressureText" />
+        <!--            android:text="@string/wind_speed"-->
+        <TextView
+            android:id="@+id/pressureText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{@string/pressure(weather.pressure)}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintStart_toStartOf="@+id/horizontal_middle"
+            app:layout_constraintTop_toBottomOf="@+id/item_low_temperature" />
+
+        <TextView
+            android:id="@+id/homeLocName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:text="@{homeName}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/horizontal_middle"
+            app:layout_constraintStart_toStartOf="@+id/horizontal_middle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
