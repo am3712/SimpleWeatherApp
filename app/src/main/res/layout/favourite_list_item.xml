@@ -8,15 +8,15 @@
 
         <variable
             name="city"
-            type="com.example.simpleweatherapp.data.local.City" />
+            type="com.myapps.simpleweatherapp.data.local.City" />
 
         <variable
             name="tempUnit"
-            type="com.example.simpleweatherapp.data.repository.TemperatureUnit" />
+            type="com.myapps.simpleweatherapp.data.repository.TemperatureUnit" />
 
         <variable
             name="clickListener"
-            type="com.example.simpleweatherapp.ui.favourite.FavouriteCityListener" />
+            type="com.myapps.simpleweatherapp.ui.favourite.FavouriteCityListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

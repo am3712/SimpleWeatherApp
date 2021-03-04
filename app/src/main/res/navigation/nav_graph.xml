@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_weather"
-        android:name="com.example.simpleweatherapp.ui.weather.WeatherFragment"
+        android:name="com.myapps.simpleweatherapp.ui.weather.WeatherFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_weather" >
         <action
@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/navigation_favourite"
-        android:name="com.example.simpleweatherapp.ui.favourite.FavouriteFragment"
+        android:name="com.myapps.simpleweatherapp.ui.favourite.FavouriteFragment"
         android:label="@string/title_favourite"
         tools:layout="@layout/fragment_favourite">
         <action
@@ -45,7 +45,7 @@
 
     <fragment
         android:id="@+id/navigation_maps"
-        android:name="com.example.simpleweatherapp.ui.location.DetectLocationFragment"
+        android:name="com.myapps.simpleweatherapp.ui.location.DetectLocationFragment"
         android:label="@string/detect_location"
         tools:layout="@layout/fragment_detect_location">
         <action
@@ -75,7 +75,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_details"
-        android:name="com.example.simpleweatherapp.ui.details.DetailsFragment"
+        android:name="com.myapps.simpleweatherapp.ui.details.DetailsFragment"
         android:label="@string/details"
         tools:layout="@layout/details_fragment">
         <argument
@@ -93,7 +93,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.simpleweatherapp.ui.settings.SettingsFragment"
+        android:name="com.myapps.simpleweatherapp.ui.settings.SettingsFragment"
         android:label="@string/title_settings">
         <action
             android:id="@+id/action_navigation_settings_to_navigation_maps"
@@ -101,7 +101,7 @@
     </fragment>
     <fragment
         android:id="@+id/startUpFragment"
-        android:name="com.example.simpleweatherapp.ui.firstopen.StartUpFragment"
+        android:name="com.myapps.simpleweatherapp.ui.firstopen.StartUpFragment"
         android:label="First time launch"
         tools:layout="@layout/fragment_start_up">
         <action
@@ -115,7 +115,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_alarms"
-        android:name="com.example.simpleweatherapp.ui.alarms.AlarmsFragment"
+        android:name="com.myapps.simpleweatherapp.ui.alarms.AlarmsFragment"
         android:label="@string/title_alarms"
         tools:layout="@layout/alarms_fragment">
         <action
@@ -124,7 +124,7 @@
     </fragment>
     <fragment
         android:id="@+id/navigation_addAlarm"
-        android:name="com.example.simpleweatherapp.ui.addalarm.AddAlarmFragment"
+        android:name="com.myapps.simpleweatherapp.ui.addalarm.AddAlarmFragment"
         android:label="@string/add_alarm"
         tools:layout="@layout/add_alarm_fragment">
         <action

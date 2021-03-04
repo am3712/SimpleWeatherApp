@@ -6,7 +6,7 @@
 
         <variable
             name="weatherViewModel"
-            type="com.example.simpleweatherapp.ui.weather.WeatherViewModel" />
+            type="com.myapps.simpleweatherapp.ui.weather.WeatherViewModel" />
     </data>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"

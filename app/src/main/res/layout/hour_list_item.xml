@@ -8,11 +8,11 @@
 
         <variable
             name="hour"
-            type="com.example.simpleweatherapp.data.local.Hour" />
+            type="com.myapps.simpleweatherapp.data.local.Hour" />
 
         <variable
             name="tempUnit"
-            type="com.example.simpleweatherapp.data.repository.TemperatureUnit" />
+            type="com.myapps.simpleweatherapp.data.repository.TemperatureUnit" />
 
     </data>
 

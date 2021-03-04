@@ -8,11 +8,11 @@
 
         <variable
             name="alarm"
-            type="com.example.simpleweatherapp.data.local.Alarm" />
+            type="com.myapps.simpleweatherapp.data.local.Alarm" />
 
         <variable
             name="clickListener"
-            type="com.example.simpleweatherapp.ui.alarms.AlarmListener" />
+            type="com.myapps.simpleweatherapp.ui.alarms.AlarmListener" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

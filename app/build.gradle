@@ -10,10 +10,10 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.simpleweatherapp"
+        applicationId "com.myapps.simpleweatherapp"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 1
+        versionCode 3
         versionName "1.0"
 
         // Set the properties within `local.properties` into a `Properties` class so that values

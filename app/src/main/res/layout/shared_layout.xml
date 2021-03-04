@@ -5,19 +5,19 @@
 
         <variable
             name="weather"
-            type="com.example.simpleweatherapp.data.local.Weather" />
+            type="com.myapps.simpleweatherapp.data.local.Weather" />
 
         <variable
             name="days"
-            type="java.util.List&lt;com.example.simpleweatherapp.data.local.Day>" />
+            type="java.util.List&lt;com.myapps.simpleweatherapp.data.local.Day>" />
 
         <variable
             name="hours"
-            type="java.util.List&lt;com.example.simpleweatherapp.data.local.Hour>" />
+            type="java.util.List&lt;com.myapps.simpleweatherapp.data.local.Hour>" />
 
         <variable
             name="preferences"
-            type="com.example.simpleweatherapp.data.repository.UserPreferences" />
+            type="com.myapps.simpleweatherapp.data.repository.UserPreferences" />
 
         <variable
             name="homeName"

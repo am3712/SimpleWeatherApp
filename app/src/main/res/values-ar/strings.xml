@@ -86,4 +86,9 @@
 
     <string name="days">حدد يوم (أيام):</string>
     <string name="start_time_must_be_grater">يجب أن يكون وقت البدء أكبر من الوقت الحالي !!!</string>
+
+    <string name="receive">استقبل</string>
+    <string name="disable">تعطيل</string>
+    <string name="cancel">إلغاء</string>
+    <string name="receive_notification">تلقي إخطار حول تنبيهات الطقس ؟</string>
 </resources>
