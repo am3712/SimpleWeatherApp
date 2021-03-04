@@ -20,7 +20,7 @@
 - Lifecycle
 
 
-![Resgister](https://github.com/am3712/SimpleWeatherApp/blob/master/screenshots/0.png?raw=true)
+![alt text](https://github.com/am3712/SimpleWeatherApp/blob/master/screenshots/0.png?raw=true)
 ![Resgister](https://github.com/am3712/SimpleWeatherApp/blob/master/screenshots/1.png?raw=true)
 ![Resgister](https://github.com/am3712/SimpleWeatherApp/blob/master/screenshots/2.png?raw=true)
 ![Resgister](https://github.com/am3712/SimpleWeatherApp/blob/master/screenshots/3.png?raw=true)
