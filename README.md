@@ -8,6 +8,7 @@
 - Room Database
 - OpenApiWeather
 - Coroutine
+- DataStore
 - MVVM
 - RecyclerView
 - Maps
