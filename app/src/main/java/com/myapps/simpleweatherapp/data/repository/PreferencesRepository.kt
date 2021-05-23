@@ -3,7 +3,7 @@ package com.myapps.simpleweatherapp.data.repository
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.*
-import androidx.datastore.preferences.createDataStore
+import androidx.datastore.preferences.preferencesDataStore
 import com.google.android.gms.maps.model.LatLng
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
@@ -14,6 +14,10 @@ import java.util.*
 import kotlin.math.roundToInt
 
 private const val USER_PREFERENCES_NAME = "user_preferences"
+
+// At the top level of your kotlin file:
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = USER_PREFERENCES_NAME)
+
 
 enum class TemperatureUnit(val degreeSign: String) {
     KELVIN("\u212A"),
@@ -59,10 +63,7 @@ class UserPreferencesRepository private constructor(context: Context) {
         val USER_LANG_KEY = stringPreferencesKey("user_lang_key")
     }
 
-    private val dataStore: DataStore<Preferences> =
-        context.createDataStore(
-            name = USER_PREFERENCES_NAME
-        )
+    private val dataStore = context.dataStore
 
     val homeLocationLatLng: Flow<LatLng> = dataStore.data.catch { exception ->
         if (exception is IOException) {

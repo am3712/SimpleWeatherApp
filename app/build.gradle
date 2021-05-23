@@ -13,18 +13,8 @@ android {
         applicationId "com.myapps.simpleweatherapp"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 3
-        versionName "1.0"
-
-        // Set the properties within `local.properties` into a `Properties` class so that values
-        // within `local.properties` (e.g. Maps API key) are accessible in this file.
-        Properties properties = new Properties()
-        if (rootProject.file("local.properties").exists()) {
-            properties.load(rootProject.file("local.properties").newDataInputStream())
-        }
-
-        // Inject the Maps API key into the manifest
-        manifestPlaceholders = [ mapsApiKey : properties.getProperty("MAPS_API_KEY", "") ]
+        versionCode 5
+        versionName "1.2"
 
         vectorDrawables.useSupportLibrary = true
 
@@ -69,8 +59,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     //Navigation
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.3'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.3'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
 
     //LiveData & ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
@@ -87,7 +77,6 @@ dependencies {
     //Room
     implementation "androidx.room:room-runtime:$room_version"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.android.support:cardview-v7:28.0.0'
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
 
@@ -95,7 +84,7 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.1.1'
 
     //Preferences DataStore
-    implementation "androidx.datastore:datastore-preferences:1.0.0-alpha06"
+    implementation "androidx.datastore:datastore-preferences:1.0.0-alpha08"
 
     //google play services
     implementation 'com.google.android.gms:play-services-maps:17.0.0'

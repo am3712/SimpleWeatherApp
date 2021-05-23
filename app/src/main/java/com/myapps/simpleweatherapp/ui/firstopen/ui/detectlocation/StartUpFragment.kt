@@ -1,4 +1,4 @@
-package com.myapps.simpleweatherapp.ui.firstopen
+package com.myapps.simpleweatherapp.ui.firstopen.ui.detectlocation
 
 import android.Manifest
 import android.content.Intent
@@ -18,6 +18,7 @@ import com.myapps.simpleweatherapp.BuildConfig
 import com.myapps.simpleweatherapp.MainActivity
 import com.myapps.simpleweatherapp.R
 import com.myapps.simpleweatherapp.databinding.FragmentStartUpBinding
+import com.myapps.simpleweatherapp.ui.firstopen.StartUpViewModel
 import timber.log.Timber
 
 
@@ -100,8 +101,10 @@ class StartUpFragment : androidx.fragment.app.Fragment() {
         })
 
         viewModel.finishAndNavigate.observe(viewLifecycleOwner, {
-            (activity as MainActivity).supportActionBar?.show()
-            findNavController().navigate(StartUpFragmentDirections.actionStartUpFragmentToNavigationWeather())
+//            (activity as MainActivity).supportActionBar?.show()
+//            findNavController().navigate(StartUpFragmentDirections.actionStartUpFragmentToNavigationWeather())
+            startActivity(Intent(requireContext(), MainActivity::class.java))
+            requireActivity().finish()
         })
     }
 
@@ -110,8 +113,16 @@ class StartUpFragment : androidx.fragment.app.Fragment() {
         val builder = MaterialAlertDialogBuilder(requireContext())
         builder.setTitle(getString(R.string.receive_notification))
         // add OK and Cancel buttons
-        builder.setPositiveButton(getString(R.string.receive)) { _, _ -> viewModel.updateAlertsStatus(true) }
-        builder.setNegativeButton(getString(R.string.disable)) { _, _ -> viewModel.updateAlertsStatus(false) }
+        builder.setPositiveButton(getString(R.string.receive)) { _, _ ->
+            viewModel.updateAlertsStatus(
+                true
+            )
+        }
+        builder.setNegativeButton(getString(R.string.disable)) { _, _ ->
+            viewModel.updateAlertsStatus(
+                false
+            )
+        }
         builder.setNeutralButton(getString(R.string.cancel)) { _, _ -> viewModel.resetLocation() }
         builder.setCancelable(false)
 

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.myapps.simpleweatherapp.R
@@ -34,6 +35,7 @@ class WeatherFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         _binding = FragmentWeatherBinding.inflate(inflater, container, false)
 
         //days
@@ -66,10 +68,10 @@ class WeatherFragment : Fragment() {
             }
         })
 
-        viewModel.homeName.observe(viewLifecycleOwner, { homeName ->
-            if (homeName.isNullOrEmpty())
-                findNavController().navigate(WeatherFragmentDirections.actionNavigationWeatherToStartUpFragment())
-        })
+//        viewModel.homeName.observe(viewLifecycleOwner, { homeName ->
+//            if (homeName.isNullOrEmpty())
+//                findNavController().navigate(WeatherFragmentDirections.actionNavigationWeatherToStartUpFragment())
+//        })
 
         //observe no internet Connection
         viewModel.networkStatus.observe(viewLifecycleOwner, {

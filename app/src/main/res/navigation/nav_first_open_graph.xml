@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/first_open_nav_graph"
+    app:startDestination="@id/startUpFragment">
+
+    <fragment
+        android:id="@+id/navigation_maps"
+        android:name="com.myapps.simpleweatherapp.ui.location.DetectLocationFragment"
+        android:label="@string/detect_location"
+        tools:layout="@layout/fragment_detect_location">
+        <argument
+            android:name="navigate_to"
+            android:defaultValue="0"
+            app:argType="integer" />
+
+        <argument
+            android:name="latLng"
+            android:defaultValue="@null"
+            app:argType="com.google.android.gms.maps.model.LatLng"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/startUpFragment"
+        android:name="com.myapps.simpleweatherapp.ui.firstopen.ui.detectlocation.StartUpFragment"
+        android:label="First time launch"
+        tools:layout="@layout/fragment_start_up" >
+        <action
+            android:id="@+id/action_startUpFragment_to_navigation_maps"
+            app:destination="@id/navigation_maps" />
+    </fragment>
+</navigation>

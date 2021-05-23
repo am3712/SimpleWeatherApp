@@ -9,14 +9,7 @@
         android:id="@+id/navigation_weather"
         android:name="com.myapps.simpleweatherapp.ui.weather.WeatherFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_weather" >
-        <action
-            android:id="@+id/action_navigation_weather_to_startUpFragment"
-            app:destination="@id/startUpFragment"
-            app:popUpTo="@id/navigation_weather"
-            app:popUpToInclusive="true"
-            app:launchSingleTop="true" />
-    </fragment>
+        tools:layout="@layout/fragment_weather" />
 
     <fragment
         android:id="@+id/navigation_favourite"
@@ -97,20 +90,6 @@
         android:label="@string/title_settings">
         <action
             android:id="@+id/action_navigation_settings_to_navigation_maps"
-            app:destination="@id/navigation_maps" />
-    </fragment>
-    <fragment
-        android:id="@+id/startUpFragment"
-        android:name="com.myapps.simpleweatherapp.ui.firstopen.StartUpFragment"
-        android:label="First time launch"
-        tools:layout="@layout/fragment_start_up">
-        <action
-            android:id="@+id/action_startUpFragment_to_navigation_weather"
-            app:destination="@id/navigation_weather"
-            app:popUpTo="@id/startUpFragment"
-            app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_startUpFragment_to_navigation_maps"
             app:destination="@id/navigation_maps" />
     </fragment>
     <fragment

@@ -67,18 +67,12 @@
     <string name="alarm_type_image_description" translatable="false">alarm type Image</string>
     <string name="stop_alarm_image_button_description" translatable="false">Stop alarm image button</string>
     <string name="alarm_name">Alarm Name</string>
-
-
     <string name="weather_alerts_channel_id" translatable="false">alerts_channel</string>
     <string name="weather_alerts_channel_name">Weather alerts</string>
     <string name="weather_alerts_channel_description">weather alerts notifications</string>
-
-
     <string name="weather_alarms_channel_id" translatable="false">alarms_channel</string>
     <string name="weather_alarms_channel_name">Weather alarms</string>
     <string name="weather_alarms_channel_description">weather alarms notifications</string>
-<!--    <string name="alerts_notification_text">Alert:</string>-->
-<!--    <string name="alarms_notification_text">Alarm:</string>-->
     <string name="repeat">Repeat: </string>
     <string name="active">active</string>
     <string name="disabled">disabled</string>
@@ -102,5 +96,4 @@
     <string name="disable">Disable</string>
     <string name="cancel">Cancel</string>
     <string name="receive_notification">Receive notification about weather Alerts ?</string>
-
 </resources>

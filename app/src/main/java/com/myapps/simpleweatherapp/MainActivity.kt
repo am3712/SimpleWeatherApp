@@ -1,7 +1,9 @@
 package com.myapps.simpleweatherapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -9,7 +11,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.myapps.simpleweatherapp.data.repository.UserPreferencesRepository
+import com.myapps.simpleweatherapp.ui.firstopen.StartUpActivity
 import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
+import kotlinx.coroutines.flow.first
 import timber.log.Timber
 import java.util.*
 
@@ -45,6 +50,15 @@ class MainActivity : LocaleAwareCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
 
         handleNavigation()
+
+        lifecycleScope.launchWhenCreated {
+            val homeLocationName =
+                UserPreferencesRepository.getInstance(this@MainActivity).homeLocationName.first()
+            if (homeLocationName.isEmpty()) {
+                startActivity(Intent(this@MainActivity, StartUpActivity::class.java))
+                finish()
+            }
+        }
     }
 
     private fun handleNavigation() {
@@ -61,7 +75,9 @@ class MainActivity : LocaleAwareCompatActivity() {
                 bottomNavigationView.visibility = View.VISIBLE
         }
 
+
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)

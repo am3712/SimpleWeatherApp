@@ -20,7 +20,7 @@ import com.myapps.simpleweatherapp.BuildConfig
 import com.myapps.simpleweatherapp.R
 import com.myapps.simpleweatherapp.data.repository.LocationOptions
 import com.myapps.simpleweatherapp.data.repository.UserPreferencesRepository
-import com.myapps.simpleweatherapp.ui.firstopen.REQUEST_LOCATION_PERMISSIONS_REQUEST_CODE
+import com.myapps.simpleweatherapp.ui.firstopen.ui.detectlocation.REQUEST_LOCATION_PERMISSIONS_REQUEST_CODE
 import com.zeugmasolutions.localehelper.LocaleAwareCompatActivity
 import kotlinx.coroutines.flow.first
 import timber.log.Timber
